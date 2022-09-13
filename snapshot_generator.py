@@ -35,11 +35,12 @@ def decode_on_frame_and_save_to_disk(url):
             # Return because we just need one frame
             return
 
-try:
-    logging.info(' Start Snapshot Generator')
-    while True:
-        decode_on_frame_and_save_to_disk(RTSP_URL)
-        logging.info(f' Awaiting next iteration, sleep for {SECONDS_TO_SLEEP}sec')
-        time.sleep(SECONDS_TO_SLEEP)
-except Exception as error:
-    logging.error(error)
+if __name__ == "__main__":
+    try:
+        logging.info(' Start Snapshot Generator')
+        while True:
+            decode_on_frame_and_save_to_disk(RTSP_URL)
+            logging.info(f' Awaiting next iteration, sleep for {SECONDS_TO_SLEEP}sec')
+            time.sleep(SECONDS_TO_SLEEP)
+    except Exception as error:
+        logging.error(error)
