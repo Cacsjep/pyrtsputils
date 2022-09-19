@@ -4,7 +4,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-RTSP_URL = "rtsp://root:1qay2wsx@192.168.171.197/axis-media/media.amp"
+RTSP_URL = "rtsp://<username>:<password>@<ip>/axis-media/media.amp"
 
 def rtsp_to_opencv(url):
     logging.info(f' Try to connect to {url}')
